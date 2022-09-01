@@ -1,0 +1,36 @@
+
+.add_cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .add_set {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .add_cart input[type="text"] {
+    height: 23px;
+    width: 90%;
+  }
+  .add_cart input[type="submit"] {
+    height: 23px;
+    width: 80%;
+    display: block;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .add_cart select {
+    width: 80%;
+  }
+  .add_set input[type="text"] {
+    height: 23px;
+    width: 100%;
+  }
+  .add_set input[type="submit"] {
+    height: 23px;
+    width: 70%;
+    align-items: center;
+  }
