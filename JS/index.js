@@ -17,6 +17,7 @@ const getNameSet = () => {
 };
 
 // TODO funkcja do zapisywania fiszek do zestawu
+// TODO funkcja do zapisywania nowgo zestawu
 // TODO funkcja do pobierania fiszek z konkretnej kategorii
 // TODO zmianna kategorii fiszek => uczę się - powtarzam - znam
 getNameSet();
