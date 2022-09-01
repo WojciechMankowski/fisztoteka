@@ -18,7 +18,7 @@
           <li><a href="learn.html">Nauka</a></li>
         </ul>
       </nav>
-      <article class="add_fishcard">
+      <article class="add_fishcard" onload="getNameSet">
         <div class="add_set">
           <h2>Stwórz nowy zestaw fiszek</h2>
           <form action="" method="post">
@@ -33,10 +33,8 @@
           <h2>Dodaj nową fiszkę do zestawu</h2>
           <form action="" method="post">
             <label for="nameset">Nazwa zestawu</label>
-            <select name="nameset" id="nameset">
-              <option value="Zwierzęta">Zwierzęta"</option>
-              <option value="Owoce">Owoce</option>
-              <option value="Job">Job</option>
+            <select name="nameset" id="nameset_select" >
+              <option value="null">Wybierz zestaw</option>
             </select>
             <br />
             <label for="notion">Pojęcie</label>
@@ -48,5 +46,6 @@
         </div>
       </article>
     </main>
+    <script src="./JS/index.js"></script>
   </body>
 </html>
