@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fisztoteka</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/reset.css" />
+  </head>
+  <body>
+    <main class="main">
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="add_fishcard.html">Dodaj rzeczy</a></li>
+          <li><a href="learn.html">Nauka</a></li>
+        </ul>
+      </nav>
+      <article class="add_fishcard">
+        <div class="add_set">
+          <h2>Stwórz nowy zestaw fiszek</h2>
+          <form action="" method="post">
+            <label for="nameset">Nazwa zestawu</label>
+            <br />
+            <input type="text" name="nameset" id="nameset" />
+            <br />
+            <input type="submit" value="Dodaj zestaw" />
+          </form>
+        </div>
+        <div class="add_cart">
+          <h2>Dodaj nową fiszkę do zestawu</h2>
+          <form action="" method="post">
+            <label for="nameset">Nazwa zestawu</label>
+            <select name="nameset" id="nameset">
+              <option value="Zwierzęta">Zwierzęta"</option>
+              <option value="Owoce">Owoce</option>
+              <option value="Job">Job</option>
+            </select>
+            <br />
+            <label for="notion">Pojęcie</label>
+            <input type="text" name="notion" id="notion" /> <br />
+            <label for="def">Definicja</label>
+            <input type="text" name="def" id="def" />
+            <input type="submit" value="Dodaj fiszkę" />
+          </form>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
