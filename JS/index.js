@@ -15,9 +15,17 @@ const getNameSet = () => {
 		)
 		.catch((error) => console.error(error));
 };
+const creatOptions = () => {
+	const elementSelect = document.querySelector('#nameset_select');
+	let length = elementSelect.options.length - 1;
+	name_set.forEach(
+		(element) =>
+			(elementSelect.options[length + 1] = new Option(element, element))
+	);
+};
 
 // TODO funkcja do zapisywania fiszek do zestawu
-// TODO funkcja do zapisywania nowgo zestawu
+// TODO funkcja do zapisywania nowego zestawu
 // TODO funkcja do pobierania fiszek z konkretnej kategorii
 // TODO zmianna kategorii fiszek => uczę się - powtarzam - znam
 getNameSet();
