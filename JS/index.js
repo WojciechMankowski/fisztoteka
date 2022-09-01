@@ -23,22 +23,22 @@ const creatOptions = () => {
   console.log(next_click);
   if (next_click == 0) {
     name_set.forEach((element) => {
-		console.log(element);
+      console.log(element);
       elementSelect.options[length + 1] = new Option(element, element);
       addNameSet.push(element);
     });
     next_click++;
-	length++;
+    length++;
   } else {
     console.log(addNameSet);
     next_click++;
-	console.log(name_set);
+    console.log(name_set);
     name_set.forEach((element) => {
-		console.log(element in addNameSet);
+      console.log(element in addNameSet);
       if (element in addNameSet) {
         elementSelect.options[length + 1] = new Option(element, element);
         addNameSet.push(element);
-		length++
+        length++;
       }
     });
   }
@@ -63,5 +63,19 @@ getNameSet();
 
 const elementSelect = document.querySelector("#nameset_select");
 const btn_addset = document.querySelector("#addset");
-elementSelect.addEventListener("click", creatOptions);
+// elementSelect.addEventListener("click", creatOptions);
 btn_addset.addEventListener("click", addNewSet);
+const creatOptions2 = () => {
+  const lengtNameSet = name_set.length;
+  const elementSelect = document.querySelector("#nameset_select");
+  let length = elementSelect.options.length - 1;
+  
+  let index = 0;
+  while (lengtNameSet != index) {
+	console.log(name_set[index]);
+	elementSelect.options[length + 1] = new Option(name_set[index], name_set[index]);
+	index++
+	length++
+  }
+};
+elementSelect.addEventListener("click", creatOptions2);
