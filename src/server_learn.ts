@@ -1,6 +1,15 @@
 import { Flashcard, Card } from "./Types/interface";
+import { createDIV, createBTN } from "./Helpers/createElement";
 const user_name: string = "wojtek";
 const flashcards: Flashcard[] = [];
+let btn_card: HTMLButtonElement; 
+
+const render = () => {
+  const box_learn = document.querySelector('.box_learn')
+  box_learn.appendChild(createDIV(flashcards[0]))
+  btn_card = document.querySelector(".btn_card");
+  btn_card.addEventListener("click", change);
+}
 
 const addElemetToFlashcards = (card: Card[]) => {
   for (let i = 0; i != card.length; i++) {
@@ -31,7 +40,7 @@ const addElemetToFlashcards = (card: Card[]) => {
       flashcards.push(newCart)
     }
   }
-  console.table(flashcards)
+  render()
 };
 const URL = "http://127.0.0.1:8000/";
 export const download_all_flashcards = (
@@ -46,6 +55,24 @@ export const download_all_flashcards = (
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       addElemetToFlashcards(data);
     });
 };
+let suitable_facility;
+const change = () => {
+    // odczytać zawartość strong
+    const div= document.querySelector(".card");
+    const strong = div.querySelector("strong");
+     const notion = strong.innerHTML;
+    // znaleść odpowiedni obiekt
+    for (let i = 0; i != flashcards.length; i++) {
+        const obj = flashcards[i];
+        if (obj.notion == notion) {
+            suitable_facility = obj;
+        }}
+    strong.innerText += suitable_facility.definition;
+    div.appendChild(createBTN("Znam"));
+    div.appendChild(createBTN("Nie znam"));
+};
+
