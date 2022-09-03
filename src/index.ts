@@ -2,7 +2,7 @@ import { getNameSet, addNewSet, creatOptions, addFidhCard } from './server_get';
 import {download_all_flashcards } from './server_learn'
 
 // creat variables
-const URL = 'http://127.0.0.1:8000/';
+// const URL = 'http://127.0.0.1:8000/';
 const elementSelect: HTMLSelectElement = document.querySelector("#nameset_select");
 const learn: HTMLSelectElement = document.querySelector("#nameset_learn");
 

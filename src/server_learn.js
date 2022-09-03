@@ -1,14 +1,14 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.download_all_flashcards = exports.scoring_points = void 0;
-const Render_1 = require("./Helpers/Render");
-const Update_1 = require("./Helpers/Update");
-const user_name = 'wojtek';
-const flashcards = [];
-const URL = 'http://127.0.0.1:8000/';
-const scoring_points = (card) => {
+var Render_1 = require("./Helpers/Render");
+var Update_1 = require("./Helpers/Update");
+var user_name = 'wojtek';
+var flashcards = [];
+var URL = 'http://127.0.0.1:8000/';
+var scoring_points = function (card) {
     console.log(card);
-    flashcards.forEach((element) => {
+    flashcards.forEach(function (element) {
         if (element == card) {
             element.numberofrepetitions++;
             if (element.numberofrepetitions == 3) {
@@ -19,55 +19,54 @@ const scoring_points = (card) => {
     (0, Render_1.render_next_card)(flashcards);
 };
 exports.scoring_points = scoring_points;
-const addElemetToFlashcards = (card) => {
-    for (let i = 0; i != card.length; i++) {
-        const obj = card[i];
+var addElemetToFlashcards = function (card) {
+    for (var i = 0; i != card.length; i++) {
+        var obj = card[i];
         if (obj.categories == 'uczę się') {
-            const newCart = {
+            var newCart = {
                 notion: obj.notion,
                 definition: obj.definition,
                 name_image: obj.name_image,
                 categories: obj.categories,
                 numberofrepetitions: 0,
-                id: obj.id,
+                id: obj.id
             };
             flashcards.push(newCart);
         }
         else if (obj.categories == 'powtarzam') {
-            const newCart = {
+            var newCart = {
                 notion: obj.notion,
                 definition: obj.definition,
                 name_image: obj.name_image,
                 categories: obj.categories,
                 numberofrepetitions: 3,
-                id: obj.id,
+                id: obj.id
             };
             flashcards.push(newCart);
         }
         else {
-            const newCart = {
+            var newCart = {
                 notion: obj.notion,
                 definition: obj.definition,
                 name_image: obj.name_image,
                 categories: obj.categories,
                 numberofrepetitions: 6,
-                id: obj.id,
+                id: obj.id
             };
             flashcards.push(newCart);
         }
     }
     (0, Render_1.render)(flashcards);
 };
-const download_all_flashcards = (event, select) => {
+var download_all_flashcards = function (event, select) {
     event.preventDefault();
-    const name_set = select;
-    const text = `get_flashcard/${user_name}/${name_set.value}`;
-    const url = `${URL}${text}`;
+    var name_set = select;
+    var text = "get_flashcard/".concat(user_name, "/").concat(name_set.value);
+    var url = "".concat(URL).concat(text);
     fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
         addElemetToFlashcards(data);
     });
 };
 exports.download_all_flashcards = download_all_flashcards;
-//# sourceMappingURL=server_learn.js.map

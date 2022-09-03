@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/WojciechMankowski/fisztoteka/issues"
   },
-  "homepage": "https://github.com/WojciechMankowski/fisztoteka#readme"
+  "homepage": "https://github.com/WojciechMankowski/fisztoteka#readme",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1"
+  }
 }

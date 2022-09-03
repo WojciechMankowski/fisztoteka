@@ -1,6 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.addNewSet = exports.addFidhCard = exports.creatOptions = exports.getNameSet = void 0;
 const URL = "http://127.0.0.1:8000/";
 const name_set = [];
-export const getNameSet = () => {
+const getNameSet = () => {
     const text = `wojtek/sets`;
     const url = `${URL}${text}`;
     fetch(url)
@@ -15,7 +18,8 @@ export const getNameSet = () => {
     }))
         .catch((error) => console.error(error));
 };
-export const creatOptions = (select) => {
+exports.getNameSet = getNameSet;
+const creatOptions = (select) => {
     const nameset = [...new Set(name_set)];
     const lengtNameSet = nameset.length;
     const elementSelect = select;
@@ -29,8 +33,9 @@ export const creatOptions = (select) => {
         }
     }
 };
+exports.creatOptions = creatOptions;
 // funkcja do zapisywania fiszek do zestawu
-export const addFidhCard = (event) => {
+const addFidhCard = (event) => {
     event.preventDefault();
     const notion = document.querySelector("#notion");
     const notion_value = notion.value;
@@ -47,8 +52,9 @@ export const addFidhCard = (event) => {
         .then((res) => console.log(res.ok))
         .catch((error) => console.error(error));
 };
+exports.addFidhCard = addFidhCard;
 // funkcja do zapisywania nowego zestawu
-export const addNewSet = (event) => {
+const addNewSet = (event) => {
     event.preventDefault();
     const name_set = document.querySelector('#nameset');
     const name_set_value = name_set.value;
@@ -58,3 +64,5 @@ export const addNewSet = (event) => {
         .then((res) => console.log(res.ok))
         .catch((error) => console.error(error));
 };
+exports.addNewSet = addNewSet;
+//# sourceMappingURL=server_get.js.map
