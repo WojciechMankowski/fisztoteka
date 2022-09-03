@@ -1,12 +1,15 @@
-// funkcja do pobierania nazw zestawów
 import { getNameSet, addNewSet, creatOptions, addFidhCard } from './server_get';
 import {download_all_flashcards } from './server_learn'
-const URL = 'http://127.0.0.1:8000/';
 
-getNameSet();
+// creat variables
+const URL = 'http://127.0.0.1:8000/';
 const elementSelect: HTMLSelectElement = document.querySelector("#nameset_select");
 const learn: HTMLSelectElement = document.querySelector("#nameset_learn");
-console.log(learn);
+
+// caling function
+getNameSet();
+
+// choosing a good item
 if (elementSelect != null) {
   const btn_addset = document.querySelector("#addset");
   const btn_addCards = document.querySelector("#btn_addCart");

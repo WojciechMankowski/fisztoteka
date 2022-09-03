@@ -1,5 +1,6 @@
 import { Flashcard, Card } from './Types/interface';
 import { createDIV, createBTN, removeElement } from './Helpers/createElement';
+import {Categories} from './Types/type'
 
 const user_name: string = 'wojtek';
 const flashcards: Flashcard[] = [];
@@ -7,6 +8,7 @@ let btn_card: HTMLButtonElement;
 let suitable_facility: Flashcard;
 let btn_know, btn_not_know;
 let next_cart: number = 0;
+const URL = 'http://127.0.0.1:8000/';
 
 const render = () => {
 	const box_learn = document.querySelector('.box_learn');
@@ -17,6 +19,9 @@ const render = () => {
 };
 
 const render_next_card = () => {
+	if (next_cart == flashcards.length) {
+        next_cart=0;
+    }
 	const card: HTMLElement = document.querySelector('.card');
 	removeElement(card);
 	const box_learn = document.querySelector('.box_learn');
@@ -25,14 +30,28 @@ const render_next_card = () => {
 	btn_card = document.querySelector('.btn_card');
 	btn_card.addEventListener('click', change);
 };
+const updateCategories = (card: Flashcard) => {
+	let Categories: Categories
+	if (card.categories == "uczę się"){
+		Categories = "powtarzam"
+	}
+	else if (card.categories == "powtarzam"){
+		Categories = "znam"
+	}
+	const text = `update/flashcards/?notion=${card.notion}&categories=${Categories}`
+	const url = `${URL}${text}`
+	fetch(url, {'method': 'PUT'})
+	.then(res => res.json())
+	.then(res => console.log(res))
+	.catch(error => console.error(error))
+}
 const scoring_points = (card: Flashcard) => {
 	
   flashcards.forEach((element) => {
-		console.log(element == card);
 		if (element == card) {
 			element.numberofrepetitions++;
 			if (element.numberofrepetitions == 3) {
-				console.log('update categories');
+				updateCategories(element)
 			}
 		}
 	});
@@ -76,7 +95,7 @@ const addElemetToFlashcards = (card: Card[]) => {
 	}
 	render();
 };
-const URL = 'http://127.0.0.1:8000/';
+
 
 export const download_all_flashcards = (
 	event: Event,
@@ -103,10 +122,12 @@ const change = () => {
 			suitable_facility = obj;
 		}
 	}
-	strong.innerText += suitable_facility.definition;
+	strong.innerText = suitable_facility.definition;
 	removeElement(btn_card);
 	div.appendChild(createBTN('Znam', 'btn_know'));
 	div.appendChild(createBTN('Nie znam', 'btn_not_know'));
 	btn_know = document.querySelector('.btn_know');
+	btn_not_know = document.querySelector('.btn_not_know')
 	btn_know.addEventListener('click', () => scoring_points(suitable_facility));
+	btn_not_know.addEventListener("click", render_next_card)
 };
