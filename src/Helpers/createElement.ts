@@ -29,3 +29,12 @@ export const createDIV = (card: Flashcard) => {
 	div.appendChild(createBTN('Pokaż odpowieć', 'btn_card'));
 	return div;
 };
+export const creatediv= (name: string) => {
+	const div = document.createElement('div');
+	if (name== "znam"){
+		div.innerText = name
+	}else if (name ==" nie znam"){
+		div.innerText = name
+	}
+	return div
+}

@@ -1,5 +1,5 @@
 import { Flashcard, Card } from './Types/interface';
-import { createDIV, createBTN, removeElement } from './Helpers/createElement';
+import { createDIV, createBTN, removeElement, creatediv} from './Helpers/createElement';
 import {Categories} from './Types/type'
 
 const user_name: string = 'wojtek';
@@ -124,8 +124,12 @@ const change = () => {
 	}
 	strong.innerText = suitable_facility.definition;
 	removeElement(btn_card);
-	div.appendChild(createBTN('Znam', 'btn_know'));
-	div.appendChild(createBTN('Nie znam', 'btn_not_know'));
+	// div.appendChild(createBTN('Znam', 'btn_know'));
+	const div_on_btn = creatediv("")
+	div_on_btn.appendChild(creatediv("znam"))
+	div_on_btn.appendChild(creatediv("nie znam"))
+	div.appendChild(div_on_btn)
+	// div.appendChild(createBTN('Nie znam', 'btn_not_know'));
 	btn_know = document.querySelector('.btn_know');
 	btn_not_know = document.querySelector('.btn_not_know')
 	btn_know.addEventListener('click', () => scoring_points(suitable_facility));

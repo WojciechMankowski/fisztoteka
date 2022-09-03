@@ -1,30 +1,64 @@
-.main {
-  width: 100%;
-  margin: 6px 12px;
-  padding: 8px 16px;
-}
-.nav {
-  background-color: tomato;
-}
-.nav ul {
-  list-style: none;
-  display: flex;
-}
-.nav ul li {
-  padding-left: 24px;
-}
-.nav ul li a {
-  text-decoration: none;
-  color: black;
-}
-article {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 16px;
-  background-color: grey;
-}
-.add_fishcard {
-  background-color: limegreen;
+:root {
+	--color-text: hsl(200, 15%, 8%);
+	--color-input: hsl(0, 0%, 52%);
+	--color-background: hsl(0, 0%, 98%);
+	--color-header-background: hsl(0, 0%, 100%);
 }
 
+.main {
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 32px;
+}
+.nav {
+	background-color: tomato;
+}
+.nav ul {
+	list-style: none;
+	display: flex;
+}
+.nav ul li {
+	padding-left: 24px;
+}
+.nav ul li a {
+	text-decoration: none;
+	color: black;
+}
+article {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 16px;
+	background-color: grey;
+}
+.add_fishcard {
+	background-color: limegreen;
+}
+
+.box_learn {
+	margin-top: 15px;
+	background-color: brown;
+	display: flex;
+	align-items: center;
+
+	/* flex-direction: column; */
+}
+.card {
+	position: absolutne;
+	left: 5%;
+	top: 25px;
+}
+.btn{
+  display: flex;
+  
+}
+.btn_know {
+  align-self: flex-start;
+}
+
+.btn_not_know {
+  margin-left: 150%;
+  /* align-self: flex-end; */
+
+}

@@ -24,3 +24,14 @@ export const createDIV = (card) => {
     div.appendChild(createBTN('Pokaż odpowieć', 'btn_card'));
     return div;
 };
+export const creatediv = (name) => {
+    const div = document.createElement('div');
+    console.log(name);
+    if (name == "znam") {
+        div.innerText = name;
+    }
+    else if (name == " nie znam") {
+        div.innerText = name;
+    }
+    return div;
+};

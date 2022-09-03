@@ -1,4 +1,4 @@
-import { createDIV, createBTN, removeElement } from './Helpers/createElement.js';
+import { createDIV, removeElement, creatediv } from './Helpers/createElement.js';
 const user_name = 'wojtek';
 const flashcards = [];
 let btn_card;
@@ -35,7 +35,7 @@ const updateCategories = (card) => {
     }
     const text = `update/flashcards/?notion=${card.notion}&categories=${Categories}`;
     const url = `${URL}${text}`;
-    fetch(url, {'method': 'PUT'})
+    fetch(url, { 'method': 'PUT' })
         .then(res => res.json())
         .then(res => console.log(res))
         .catch(error => console.error(error));
@@ -113,8 +113,12 @@ const change = () => {
     }
     strong.innerText = suitable_facility.definition;
     removeElement(btn_card);
-    div.appendChild(createBTN('Znam', 'btn_know'));
-    div.appendChild(createBTN('Nie znam', 'btn_not_know'));
+    // div.appendChild(createBTN('Znam', 'btn_know'));
+    const div_on_btn = creatediv("");
+    div_on_btn.appendChild(creatediv("znam"));
+    div_on_btn.appendChild(creatediv("nie znam"));
+    div.appendChild(div_on_btn);
+    // div.appendChild(createBTN('Nie znam', 'btn_not_know'));
     btn_know = document.querySelector('.btn_know');
     btn_not_know = document.querySelector('.btn_not_know');
     btn_know.addEventListener('click', () => scoring_points(suitable_facility));
