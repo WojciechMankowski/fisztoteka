@@ -54,7 +54,6 @@ export const addElemetToFlashcards = (card) => {
 };
 export const download_all_flashcards = (event, select) => {
   event.preventDefault();
-  console.log(select.value != null);
   if (select.value != null) {
     const name_set = select;
     const text = `get_flashcard/${user_name}/${name_set.value}`;
