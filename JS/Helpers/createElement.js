@@ -41,7 +41,7 @@ const creat_button = (name) => {
 		btn.className = 'know';
 		span.innerHTML = `<i class="fa-solid fa-arrow-right"></i>`;
 	}
-	btn.appendChild(br);
+	// btn.appendChild(br);
 	btn.appendChild(span);
 	return btn;
 };

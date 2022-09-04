@@ -62,6 +62,9 @@ article {
 
 .know {
   margin-left: auto;
+  min-width: 15vh;
+  width: 10vw;
+  max-width: 12vw;
 }
 .know i{
   font-size: 25px;
@@ -70,8 +73,11 @@ article {
   font-size: 25px;
 }
 .not_know {
-  width: 50%;
+  min-width: 15vh;
+  width: 10vw;
+  max-width: 12vw;
   margin-right: 15px;
+  background-color: pink;
 }
 /* .not_know strong{
   font-size: 12px;
