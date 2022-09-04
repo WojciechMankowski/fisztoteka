@@ -1,15 +1,11 @@
-:root {
-  --color_bacgrund: #303545;
-  --color_nav: #fff;
-  --color_article: #BFB2AA;
-  --color_card: #73665F;
-}
 
 main{
   width: 100%;
 }
 nav{
   width: 100%;
+  padding: 12px 24px;
+  background-color: #2980B9;
 }
 nav ul {
   list-style: none;
@@ -36,9 +32,9 @@ article {
 }
 .card {
   width: 50%;
-  height: 250px;
-
+  /* height: 250px; */
   border: 1px solid transparent;
+  background-color: #E74C3C;
   border-radius: 20px;
   padding: 12px 24px;
   margin-left: auto;
@@ -48,11 +44,18 @@ article {
   flex-direction: column;
   justify-content: center;
 }
+.card strong{
+  padding-bottom: 15px;
+}
+
 .btn_card{
 	margin-top: 15px;
-	background-color: transparent;
+  height: 5vh;
+	background-color: #2980B9;
 	border: none;
 	font-size: 20px;
+  width: 75%;
+  
 }
 .div_btn {
   display: flex;
@@ -65,6 +68,7 @@ article {
   min-width: 15vh;
   width: 10vw;
   max-width: 12vw;
+  background-color: #2980B9;
 }
 .know i{
   font-size: 25px;
@@ -77,15 +81,32 @@ article {
   width: 10vw;
   max-width: 12vw;
   margin-right: 15px;
-  background-color: pink;
+  background-color: #2980B9;
 }
-/* .not_know strong{
-  font-size: 12px;
-} */
+
 .img_button {
   width: 40%;
   background-color: transparent;
 }
 .img_cart{
-	width: 80%;
+	width: 95%;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+button{
+  background-color: #2980B9;
+  width: 20%;
+  font-size: 18px;
+  color: #ECF0F1;
+  border: 1px solid #2980B9;
+  border-radius: 10px;
+}
+select{
+  width: 20%;
+  font-size: 18px;
+  
+}
+select::selection{
+  background-color: #E74C3C;
+  color: #ECF0F1;
 }
