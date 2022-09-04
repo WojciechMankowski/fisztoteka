@@ -5,7 +5,7 @@ import {
   getNameSet,
 } from "./server_get.js";
 import { download_all_flashcards } from "./server_learn.js";
-
+import { connect_api_unsplash } from "./Helpers/connect_api.js";
 // creat variables
 const elementSelect = document.querySelector("#nameset_select");
 
@@ -26,3 +26,4 @@ if (elementSelect != null) {
     download_all_flashcards(event, learn)
   );
 }
+connect_api_unsplash()

@@ -10,7 +10,7 @@ export const createBTN = (text, classname) => {
 
 const creatInfoElement = (card) => {
 	const strong = document.createElement('strong');
-	strong.innerHTML = card.notion;
+	strong.innerText = card.notion;
 	return strong;
 };
 export const creat_img = (card) => {
