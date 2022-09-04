@@ -1,4 +1,5 @@
 import { data_env } from '../env.js';
+
 export const removeElement = (element) => {
 	element.remove();
 };
