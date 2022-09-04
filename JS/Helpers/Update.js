@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateCategories = void 0;
+
 const URL = 'http://127.0.0.1:8000/';
 const updateCategories = (card) => {
     let Categories;
@@ -17,5 +15,4 @@ const updateCategories = (card) => {
         .then(res => console.log(res))
         .catch(error => console.error(error));
 };
-exports.updateCategories = updateCategories;
-//# sourceMappingURL=Update.js.map
+export default updateCategories
