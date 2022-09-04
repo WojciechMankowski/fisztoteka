@@ -17,7 +17,7 @@ const change = (flashcards) => {
     }
     const btn_card = document.querySelector('.btn_card');
     const img = creat_img(suitable_facility);
-    if (!img != null) {
+    if (img != null) {
         div.appendChild(img);
     }
     strong.innerText = suitable_facility.definition;

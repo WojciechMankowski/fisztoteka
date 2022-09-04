@@ -8,6 +8,7 @@ import { download_all_flashcards } from "./server_learn.js";
 
 // creat variables
 const elementSelect = document.querySelector("#nameset_select");
+
 const learn = document.querySelector("#nameset_learn");
 // caling function
 getNameSet();

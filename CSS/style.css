@@ -1,55 +1,43 @@
 :root {
-  --color-text: hsl(200, 15%, 8%);
-  --color-input: hsl(0, 0%, 52%);
-  --color-background: hsl(0, 0%, 98%);
-  --color-header-background: hsl(0, 0%, 100%);
-  --widtch_button: 40%;
-  --widtch_butto2: 40%;
+  --color_bacgrund: #303545;
+  --color_nav: #fff;
+  --color_article: #BFB2AA;
+  --color_card: #73665F;
 }
 
-.main {
+main{
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 32px;
 }
-.nav {
-  background-color: tomato;
+nav{
+  width: 100%;
 }
-.nav ul {
+nav ul {
   list-style: none;
   display: flex;
 }
-.nav ul li {
+nav ul li {
   padding-left: 24px;
 }
-.nav ul li a {
+nav ul li a {
   text-decoration: none;
   color: black;
 }
 article {
   width: 80%;
+  height: 450px;
   margin-left: auto;
   margin-right: auto;
   padding: 16px;
-  /* background-color: grey; */
 }
-.add_fishcard {
-  background-color: limegreen;
-}
-
 .box_learn {
   margin-top: 15px;
-  /* background-color: brown; */
   display: flex;
   align-items: center;
-
-  /* flex-direction: column; */
 }
 .card {
   width: 50%;
   height: 250px;
-  background-color: aqua;
+
   border: 1px solid transparent;
   border-radius: 20px;
   padding: 12px 24px;
@@ -74,13 +62,20 @@ article {
 
 .know {
   margin-left: auto;
-  background-color: transparent;
-  border: none;
+}
+.know i{
+  font-size: 25px;
+}
+.not_know i {
+  font-size: 25px;
 }
 .not_know {
-  background-color: transparent;
-  border: none;
+  width: 50%;
+  margin-right: 15px;
 }
+/* .not_know strong{
+  font-size: 12px;
+} */
 .img_button {
   width: 40%;
   background-color: transparent;
