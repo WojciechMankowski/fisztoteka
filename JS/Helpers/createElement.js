@@ -1,5 +1,4 @@
-import { data_env } from '../env.js';
-
+import { data_env } from './ACCES_KEY.js';
 export const removeElement = (element) => {
 	element.remove();
 };
@@ -13,17 +12,16 @@ export const createBTN = (text, classname) => {
 const creatInfoElement = (card) => {
 	const strong = document.createElement('strong');
 	strong.innerText = card.notion;
-
 	return strong;
 };
 
 export const creat_img = (card) => {
 	const img = document.createElement('img');
-	const url = `https://api.unsplash.com/search/photos?query=${card.notion}&per_page=20&client_id=${data_env.ACCESS_KEY}`;
+	const url = `https://api.unsplash.com/search/photos?query=${card.notion}&per_page=20&client_id=${data_env.ACCES_KEY}`;
 	if (card.name_image == '') {
 		fetch(url)
 		.then((res) => res.json())
-		.then((data) => {
+		.then((data) => {	
 			const results = data.results;
 			img.src = results[0].urls.small
 			
