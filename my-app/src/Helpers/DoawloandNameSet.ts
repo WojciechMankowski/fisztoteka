@@ -1,29 +1,27 @@
+import axios from 'axios';
 let name_set: string[] = [];
-const sets: string[] = [];
-type sets = {
-  name_set: string;
-  id: number;
-  set_flascards: number;
-  name_user: string;
-};
-
+type Response = {
+	name_user: string;name_set: string; set_flashcards: number; id: number;
+}
 export const dowlandNameSet = () => {
-  const url = `http://127.0.0.1:8000/wojtek/sets`;
-  fetch(url)
-    .then((res) => res.json())
-    .then((res) => {
-      for (let i = 0; i != res.lenght; i++) {
-       
-        let obj = res[i];
-        console.log(obj != undefined)
-        if (obj != undefined) {
-          let nameset;
-          // nameset = obj.name_set;
-          // if (name_set.indexOf(nameset) == -1) {
-          //   name_set.push(nameset);
-          // }
-        }
-      }
-    });
-  return name_set;
+	const url = `http://127.0.0.1:8000/wojtek/sets`;
+	// axios(url)
+	// .then(response => {
+	// 	const Response: Response[] = response.data;
+	// 	const data = Response.map((item) => {
+	// 		return item.name_set;
+	// 	});
+	// })
+	fetch(url)
+		.then((res) => res.json())
+		.then((res) => {
+			for (let i = 0; i < res.length; i++) {
+				if (name_set.indexOf(res[i].name_set) === -1) {
+					name_set.push(res[i].name_set);
+				}
+			}
+		});
+	
+    return name_set;
+	
 };

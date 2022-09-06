@@ -1,10 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {AddNewCard} from './AddNewFisccard'
 import {dowlandNameSet } from '../Helpers/DoawloandNameSet'
-import {creatOptions} from "../Helpers/creatOptions"
-class App extends React.Component{
-    constructor(props: any){
+import {AddNewCard} from './AddNewFisccard'
+
+type TypProps = {};
+type TypeState = {
+    NameSet: string[]
+}
+
+class App extends React.Component<TypProps, TypeState> {
+    constructor(props: TypProps){
         super(props)
         this.state = {
             NameSet: []
@@ -13,16 +17,12 @@ class App extends React.Component{
     componentDidMount(){
         const nameset = dowlandNameSet()
         this.setState({NameSet: nameset})
-        const select_add: HTMLSelectElement  = document.querySelector('#select_add')!
-        // console.log(select_add);
-        creatOptions(nameset, select_add)
-
     } 
     render(){
         return(
             <div>
                 <h2>Moja APLIKACJA</h2>
-                <AddNewCard/>
+                <AddNewCard />
             </div>
         )
     }
