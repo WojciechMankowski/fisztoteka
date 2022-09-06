@@ -13,7 +13,9 @@ const Select_and_options = ({ values }: select_props) => {
 		})
 	}
 	return (
-			<select className="select_props" onFocus={creat_select}></select>
+		<label >
+			Wybór zestawu:
+			<select className="select_props" onFocus={creat_select}></select></label>
 	);
 };
 
