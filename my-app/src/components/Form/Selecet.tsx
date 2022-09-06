@@ -1,12 +1,6 @@
 import { creatOptions } from '../../Helpers/creatOptions';
-import Select, {ActionMeta} from 'react-select';
+import { select_props } from '../../Types/props';
 
-type select_props = { values: string[] };
-// SelectCategories: Function
-type Option = {
-	value: string;
-	label: string;
-};
 const Select_and_options = ({ values }: select_props) => {
 	const options = creatOptions(values);
 	const creat_select = () => {
@@ -19,9 +13,7 @@ const Select_and_options = ({ values }: select_props) => {
 		})
 	}
 	return (
-		<div className='div_select' >
 			<select className="select_props" onFocus={creat_select}></select>
-		</div>
 	);
 };
 
