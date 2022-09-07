@@ -35,7 +35,7 @@ export const AddNewCard = ({nameset}: props_add_new_cart) => {
   return (
     <div className="addnewcart">
       <form method="POST" onSubmit={onsubmit}>
-        <Selecet values={nameset} />
+        <Selecet values={nameset} class_name={"select_add_cart"}/>
         <Label text="Pojęcie" class="notion" type="text"/>
         <Label  text="Definicja" class="definition" type="text"/>
         <InputSubmit value="Dodaj nową kartę"/>

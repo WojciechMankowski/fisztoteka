@@ -1,10 +1,10 @@
 import { creatOptions } from '../../Helpers/creatOptions';
 import { select_props } from '../../Types/props';
 
-const Select_and_options = ({ values }: select_props) => {
+const Select_and_options = ({ values, class_name }: select_props) => {
 	const options = creatOptions(values);
 	const creat_select = () => {
-		const select = document.querySelector('.select_props')
+		const select = document.querySelector(`.${class_name}`)
 		options.forEach(element => {
 			const opt = document.createElement('option')
 			opt.value = element.value
@@ -15,7 +15,11 @@ const Select_and_options = ({ values }: select_props) => {
 	return (
 		<label >
 			Wybór zestawu:
-			<select className="select_props" onFocus={creat_select}></select></label>
+			<select className={class_name} onFocus={creat_select}>
+				<option value="wybór">
+				Wybierz zestaw
+				</option>
+				</select></label>
 	);
 };
 
