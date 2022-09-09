@@ -4,6 +4,7 @@ import { select_props } from '../../Types/props';
 const Select_and_options = ({ values, class_name }: select_props) => {
 	const options = creatOptions(values);
 	const creat_select = () => {
+		// console.log('select')
 		const select = document.querySelector(`.${class_name}`)
 		options.forEach(element => {
 			const opt = document.createElement('option')

@@ -10,17 +10,16 @@ type Card_props = {
 export const Card = (props: Card_props) => {
 	const cards = props.cards;
 	let next_card = 0;
+	console.log(cards[next_card]);
 	// const btn: HTMLButtonElement = document.querySelector('#btn')!
 	// btn.addEventListener('click', () => {console.log('jestem button')})
-	const creat_element = () => {
-		// btn.addEventListener('click', () => {console.log('jestem button')})
-		console.log('creat element')
+	const onload = () => {
 		creatElement(cards[next_card])
-	};
+	}
+	// onload()
 	return (
-		<div className='card'>
-            
-			
+		
+		<div className='card' onMouseDown={onload}>
 		</div>
 	);
 };
