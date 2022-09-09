@@ -12,3 +12,10 @@ export type CardState = {
 	categories: string;
 };
 
+export type Card ={
+	id: number;
+	notion: string;
+	definition: string;
+	name_image: string | null;
+	categories: string;
+  }

@@ -26,7 +26,6 @@ const creatStrong = (card: CardState, notion_or_def: boolean) => {
  }
 
 export const creatElement = (card: CardState) => {
-    console.log('creatElemen: ', card   )
     const div_card = document.querySelector('.card');
     console.log(div_card)
     div_card?.appendChild(creatStrong(card, true))

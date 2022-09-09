@@ -2,7 +2,7 @@ import React from 'react';
 import { AddNewCard } from './AddNewFisccard';
 import {Element} from '../Types/type'
 import {TypProps, TypeState} from '../Types/props'
-import {LearnDiv} from './LernDiv'
+import {Learn} from './LernDiv'
 class App extends React.Component<TypProps, TypeState> {
 	constructor(props: TypProps) {
 		super(props);
@@ -38,7 +38,7 @@ class App extends React.Component<TypProps, TypeState> {
 			<div>
 				<h2>Moja APLIKACJA</h2>
 				<AddNewCard nameset={this.state.NameSet} />
-                <LearnDiv values={this.state.NameSet}/>
+                <Learn values={this.state.NameSet}/>
 			</div>
 		);
 	}
